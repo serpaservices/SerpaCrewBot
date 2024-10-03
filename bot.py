@@ -31,3 +31,6 @@ async def main():
 if __name__ == '__main__':
     import asyncio
     asyncio.run(main())
+
+# Este é um novo comentário para testar o deploy no Azure.
+# Este é um novo comentário para testar o deploy no Azure.
