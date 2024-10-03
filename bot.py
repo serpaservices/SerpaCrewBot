@@ -12,25 +12,24 @@ logger = logging.getLogger(__name__)
 
 # Função chamada quando o comando /start é recebido
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    logger.info("Comando /start recebido.")
     await update.message.reply_text('Olá! Este é o SerpaCrewBot. Como posso ajudar?')
 
-# Função principal para inicializar o bot
+# Função principal para configurar o bot
 async def main():
-    token = os.getenv("TELEGRAM_API_KEY")  # Obtendo a chave da API do Telegram a partir da variável de ambiente
-
-    # Criando a aplicação do bot
+    token = os.getenv("TELEGRAM_API_KEY")
+    
+    # Inicializando o bot
     application = ApplicationBuilder().token(token).build()
 
-    # Adicionando o handler para o comando /start
+    # Adicionando o handler do comando /start
     application.add_handler(CommandHandler("start", start))
 
-    # Iniciando o bot
-    logger.info("Bot está sendo iniciado...")
+    logger.info("Bot iniciado e aguardando comandos.")
+
+    # Executando o bot com polling
     await application.run_polling()
 
 if __name__ == '__main__':
     import asyncio
     asyncio.run(main())
-
-# Este é um novo comentário para testar o deploy no Azure.
-
