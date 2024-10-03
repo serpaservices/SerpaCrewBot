@@ -34,3 +34,4 @@ if __name__ == '__main__':
 
 # Este é um novo comentário para testar o deploy no Azure.
 # Este é um novo comentário para testar o deploy no Azure.
+# Este é um novo comentário para testar o deploy no Azure.;;
